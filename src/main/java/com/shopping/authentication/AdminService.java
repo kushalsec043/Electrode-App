@@ -1,24 +1,23 @@
 package com.shopping.authentication;
 
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
-import com.shopping.Dao.AdminJpaRepository;
-import com.shopping.Dao.UserJpaRepository;
 import com.shopping.entity.Admin;
-import com.shopping.entity.User;
+import com.shopping.service.AdminRepository;
 
 @Service
 public class AdminService 
 {
 	@Autowired
-	AdminJpaRepository repo;
+	AdminRepository repo;
 	
 	@Autowired
 	Admin ad;
 
-	public boolean validate(String uname, String password) 
+	public boolean validate(String uname, String password) throws ClassNotFoundException, SQLException 
 	{
 		ad = null;
 		ad = repo.findByadname(uname);

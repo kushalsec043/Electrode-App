@@ -100,7 +100,7 @@ if(session.getAttribute("username") == null)
 </br><br>
 <hr>
 <div>
-  <h2>Your Cart Items (._Choose from homepage if no items_.)</h2>
+  <h3>Your Cart Items (._Choose from homepage if no items_.)
   <hr>
   <h3><font color="red">${noitems}</font></h3>
   <c:forEach items="${shpcart}" var="element"> 
@@ -110,11 +110,9 @@ if(session.getAttribute("username") == null)
      <img id="rcorners3" src="${element.pimage}" width="260" height="200"><br>
      
        <hr>
-    <li><a style="font-family:verdana;" href="/cartcheckout?code=${element.pid}">Check Out</a></li><br>
+    <li><a style="font-family:verdana;" href="/confimationpage?code=${element.pid}">Buy Now</a></li><br>
    <li><a style="font-family:verdana;" href="/removecartrepo?code=${element.pid}">Remove Product</a></li><br>
-   
-    
-      </div>
+         </div>
       
 </c:forEach>
   

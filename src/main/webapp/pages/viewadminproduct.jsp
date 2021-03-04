@@ -81,40 +81,27 @@ if(session.getAttribute("username") == null)
 	response.sendRedirect("welcome");
 }
 %>
-
-<div class="form-group">
-<form action="/homepage" method="get">
-<button class="btn info button4" "type="submit">Back to Home-Page</button>
- </form>
- </div>
  
 
 <div class="row">
 <div class="column">
+<br></br>
+ <div class="center">
+ <li><font color="red"><a style="font-family:verdana;color:red;" href="/viewuserorders?code=${user_aid}"><b>__Click -> Back to User Orders__</b></a></font></li>
+ </div>
 <hr>
-<form action="/homepage" method="get">
+<form action="/viewuserorders" method="get">
   <div class="center">
-
     <h3><font color="blue">.__Product Information__.</font></h3>
-    
   </div>
 </form>  
   <tr>
-<h3 class="center"><font color="black">Product: ${viewproduct.pname}</font></h3>
-<h3 class="center"><font color="black">Price: ${viewproduct.pprice} $</font></h3>
+<h3 class="center"><font color="black">Product Name: ${adminname}</font></h3>
+<h3 class="center"><font color="black">Price: ${adminprice} $</font></h3>
+<h3 class="center"><font color="black">Quantity: ${adminquantity} </font></h3>
   <div class="center">
-	<img id="rcorners3" src="${viewproduct.pimage}" width="460" height="280"><br>
+	<img id="rcorners3" src="${adminimage}" width="460" height="280"><br>
 	</div>
-	<div class="center">  
-	<form action="/addtocartrepo" method="post">
-    <label for="quantity"><b>Enter Quantity</label>
-    <input type="number" placeholder="Enter Quantity" name="quantity" value=1><br></br>
-    
-    <label for="product_id"><b>Your Product_ID :</label>
-    <input type="number" placeholder="Enter ProductID" name="code" readonly value=${viewproduct.pid}><br></br>
-    
-    <button class="btn success button4" "type="submit">Add To Cart</button>
-    </form>
 </div>
   <br>
    </tr>

@@ -15,7 +15,7 @@ body, html {
 }
 .bg {
   /* The image used */
-  background-image: url("https://thumbs.dreamstime.com/b/blue-background-football-russia-competition-pattern-cup-117984859.jpg");
+  background-image: url("http://adwallpapers.xyz/uploads/posts/1930-dark-blue-grunge-background.jpg");
 
   /* Full height */
   height: 100%; 
@@ -38,7 +38,20 @@ body, html {
   cursor: pointer; /* Add a pointer cursor on mouse-over */
 }
 
-h3 {text-align: center;}
+.product-preview-container {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 280px;
+    margin: 10px ;
+    display: inline-block;
+    text-align:center;
+}
+
+
+h3 {
+text-align: center;
+font-size: 30px;
+}
 
 .success {background-color: #4CAF50;} /* Green */
 .success:hover {background-color: #46a049;}
@@ -48,15 +61,14 @@ h3 {text-align: center;}
 
 .button4 {border-radius: 12px;}
 </style>
+
 <div class="bg">
 <body style="background-color:white;">
 <br></br>
- <h3 class="center" style="color: white">ELECTRODE - Electronics Shopping App<br></br>_WELCOME PAGE_</h3>
+<br></br>
 
+ <h3 class="center" style="color: white">ShopDrop - Shopping Web App<br></br>_WELCOME PAGE_</h3>
  <br></br>
-  <div class="center">
- <h3 style="color: white">Happiness is not in money, but in shopping.</h3>
- </div>
  <br></br>
  <div class="center">
  

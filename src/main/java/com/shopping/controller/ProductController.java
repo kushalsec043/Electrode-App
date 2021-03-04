@@ -1,20 +1,21 @@
 package com.shopping.controller;
 
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.shopping.Dao.ProductJpaRepository;
 import com.shopping.entity.Product;
+import com.shopping.service.ProductRepository;
 
 @Controller
 public class ProductController
 {
 		@Autowired
-		ProductJpaRepository repo;
+		ProductRepository repo;
 		
 		@Autowired
 		Product pro;
@@ -27,15 +28,17 @@ public class ProductController
 		}
 		
 		@RequestMapping(value = "/addtorepo", method=RequestMethod.POST)
-		public String productadded(@RequestParam int pid,@RequestParam String pname,@RequestParam double pprice,@RequestParam String pimage,Product product, ModelMap model)
+		public String productadded(@RequestParam String pname,@RequestParam double pprice,@RequestParam String pimage,Product product, ModelMap model) throws ClassNotFoundException, SQLException
 		{
-			pro.setPid(pid);
+			int product_id = (int)(Math.random() * (1000 - 1 + 1) + 1);
+
+			pro.setPid(product_id);
 			pro.setPname(pname);
 			pro.setPprice(pprice);
 			pro.setPimage(pimage);
 			
 			model.put("ProductMessage","You Added a Product to Mart Repository!!!");
-			repo.save(pro);
+			repo.add_aproduct(pro);
 			return "products";
 		}
 		
@@ -48,20 +51,20 @@ public class ProductController
 
 		
 		@RequestMapping(value = "/updatetorepo", method=RequestMethod.POST)
-		public String productupdated(@RequestParam int pid,Product product, ModelMap model)
+		public String productupdated(@RequestParam int pid,Product product, ModelMap model) throws ClassNotFoundException, SQLException
 		{
-			boolean exist = repo.existsById(pid);
+			Product exist = repo.findById(pid);
 		
-			if(!exist)
+			if(exist.getPname().isEmpty())
 			{
 				model.put("IdMessage", "Enter a Valid Product Info.!!!");
 				return "updateproduct";
 			}
 			
-			repo.deleteById(pid);
+			//repo.deleteById(pid);
 			
 			model.put("ProductMessage","You Updated a Product from Mart Repository!!!");
-			repo.save(product);
+			repo.update_aproduct(product);
 			
 			return "products";
 		}
@@ -74,14 +77,13 @@ public class ProductController
 		}
 		
 		@RequestMapping(value = "/removerepo", method=RequestMethod.POST)
-		public String productremoved(@RequestParam int pid,Product product, ModelMap model)
+		public String productremoved(@RequestParam int pid,Product product, ModelMap model) throws ClassNotFoundException, SQLException
 		{
-			pro = repo.findById(pid).orElse(null);
 			
 			if(pro != null)
 			{
 			model.put("ProductMessage","You Removed a Product from Mart Repository!!!");
-			repo.delete(pro);
+			repo.deleteById(pid);
 			return "products";
 			}
 			else

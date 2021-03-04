@@ -39,19 +39,29 @@
 <br></br>
   <div class="center">
 	<p><font color="red">${signupmessage}</font></p>
-	<br></br>
-    <label for="aname"><b>Choose Username</b></label>
-    <input type="text" placeholder="Enter Username" name="aname" required><br>
+	
+    <label for="aname"><b>Enter Username</b></label>
+    <input type="text" placeholder="Enter Username" name="aname" required>(required)<br>
 
 	<br></br>
 	
-    <label for="psw"><b>Choose Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required><br>
+    <label for="psw"><b>Enter Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>(required)<br>
     
     <br></br>
     
-     <label for="email"><b>Enter your Mail-Id</b></label>
-    <input type="email" placeholder="Enter Email" name="email" required><br>
+     <label for="email"><b>Enter Mail-Id</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required>(required)<br>
+    
+    <br></br>
+    
+     <label for="address"><b>Enter Address</b></label>
+    <input type="text" placeholder="Enter Address" name="address"><br>
+    
+    <br></br>
+    
+     <label for="contact"><b>Enter Contact No:</b></label>
+    <input type="text" placeholder="Enter Contact Info" name="contact"><br>
     
     <br></br>
 

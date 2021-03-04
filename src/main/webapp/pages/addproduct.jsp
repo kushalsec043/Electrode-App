@@ -45,7 +45,7 @@ if(session.getAttribute("username") == null)
 <form action="/products" method="get">
 		<h3 class="center">ADD PRODUCT TO MART DATABASE!!!</h3>
 		<div class="center">
-    <button  class="btn info button4" type="submit">Back to Products Page</button>
+    <button  class="btn info button4" type="submit">Back to Customize Page</button>
  </div>
  </form><br>
 
@@ -53,10 +53,6 @@ if(session.getAttribute("username") == null)
 <br></br>
   <div class="center">
 	<h5><font color="red">${IdMessage}</font></h5>
-	<label for="pid"><b>Enter Product-ID</b></label>
-    <input type="number" placeholder="Enter ProductID" name="pid" required><br>
-
-	<br></br>
     <label for="pname"><b>Enter Product-Name</b></label>
     <input type="text" placeholder="Enter ProductName" name="pname" required><br>
 

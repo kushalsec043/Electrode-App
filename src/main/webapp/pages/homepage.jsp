@@ -122,6 +122,7 @@ if(session.getAttribute("username") == null)
 
 <div class="main">
   <h2 style="color:#3498DB;">HomePage - Electrode Shopping Products </h2>
+  <p><font color="red">${alreadyadded}</font></p>
   <hr>
  
   <c:forEach items="${product}" var="element"> 
@@ -130,7 +131,7 @@ if(session.getAttribute("username") == null)
       <img id="rcorners3" src="${element.pimage}" width="260" height="200"><br></br>
       
        <li><a style="font-family:verdana;" href="/viewproduct?code=${element.pid}">View Product</a></li>
-       <li><a style="font-family:verdana;" href="/addtocartrepo?code=${element.pid}">Add To Cart</a></li><br>
+       <li><a style="font-family:verdana;" href="/viewproduct?code=${element.pid}">Add To Cart</a></li><br>
        </div>
 </c:forEach>
   

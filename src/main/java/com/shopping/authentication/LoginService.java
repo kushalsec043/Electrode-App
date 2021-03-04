@@ -1,24 +1,25 @@
 package com.shopping.authentication;
 
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.shopping.Dao.UserJpaRepository;
 import com.shopping.entity.User;
+import com.shopping.service.UserRepository;
 
 @Service
 public class LoginService 
 {
 	@Autowired
-	UserJpaRepository repo;
+	UserRepository userrepo;
 	
 	@Autowired
 	User u;
 
-	public boolean validateUser(String uname, String password) 
+	public boolean validateUser(String uname, String password) throws ClassNotFoundException, SQLException 
 	{
 		u = null;
-		u = repo.findByaname(uname);
+		u = userrepo.findByaname(uname);
 		
 		if(u != null)
 		{
@@ -30,9 +31,9 @@ public class LoginService
 		return false;
 	}
 	
-	public void adduser(User user)
+	public void adduser(User user) throws ClassNotFoundException, SQLException
 	{
-		repo.save(user);
+		userrepo.saveuser(user);
 	}
 
 }

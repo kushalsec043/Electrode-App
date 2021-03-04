@@ -44,7 +44,7 @@ if(session.getAttribute("username") == null)
 <form action="/products" method="get">
 		<h3 class="center">REMOVE PRODUCT FROM DATABASE!!!</h3>
 		<div class="center">
-    <button  class="btn info button4" type="submit">Back to Products Page</button>
+    <button  class="btn info button4" type="submit">Back to Customize Page</button>
  </div>
  </form><br>
 

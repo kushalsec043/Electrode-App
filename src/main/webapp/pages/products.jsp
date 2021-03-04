@@ -71,6 +71,8 @@ if(session.getAttribute("username") == null)
   <a href="/addcontrol"><i class="fa fa-fw fa-wrench"></i>ADD a Product</a>
   <a href="/updatecontrol"><i class="fa fa-fw fa-wrench"></i>UPDATE a Product</a>
   <a href="/removecontrol"><i class="fa fa-fw fa-wrench"></i>REMOVE a Product</a>
+  <a href="/admintoorders"><i class="fa fa-shopping-cart" style="font-size:24px"></i>  ALL Users</a>
+  
    <a href="/logout"><i class="fa fa-fw fa-user"></i> Logout</a>
 </div>
 

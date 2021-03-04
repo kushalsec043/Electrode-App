@@ -90,26 +90,26 @@ if(session.getAttribute("username") == null)
 %>
 <br></br>
 <div class="form-group">
-<form action="/homepage" method="get">
-<button class="btn info button4" "type="submit">Back to Home Page</button>
-</form><br>
-<form action="/yourcart" method="get">
-<button class="btn success button4" "type="submit">My Cart</button>
+<form action="/admintoorders" method="get">
+<button class="btn info button4" "type="submit">Back to Users Info Page</button>
 </form><br>
 </div>
 <hr>
 <div>
-  <h2>Your Orders - History of Items Purchased</h2>
+  <h2><font color="red"> Order History of User: </font>${user.aname}</h2>
+  <h3><font color="blue"> -> Email: </font>${user.email}</h3>
+  <h3><font color="blue"> -> Address: </font>${user.address}</h3>
+  <h3><font color="blue"> -> Contact no: </font>${user.contact}</h3>
+  
   <hr>
-  <h3><font color="red">${emptyorder}</font></h3>
+  <h3><font color="red">${noorders}</font></h3>
   <c:forEach items="${orders}" var="element"> 
    <div class="product-preview-container">
    <h3 style="color:Tomato;">._${element.ordername}_.</h3>
       
       <img id="rcorners3" src="${element.orderimage}" width="260" height="200"><br>
-      
-      <li><a style="font-family:verdana;" href="/vieworder?code=${element.orderid}">View Details</a></li>
-       <li><a style="font-family:verdana;" href="/cancelorder?code=${element.orderid}">Cancel Order</a></li><br>
+      <br>
+      <li><a style="font-family:verdana;" href="/vieworderbyuser?code=${element.orderid}">Product Info.</a></li>
       </div>
       
 </c:forEach>

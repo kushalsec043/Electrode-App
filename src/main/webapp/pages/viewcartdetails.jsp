@@ -71,8 +71,8 @@ if(session.getAttribute("username") == null)
 %>
 <br></br>
 <div class="form-group">
-<form action="/myorders" method="get">
-<button class="btn success button4" "type="submit">Back to My-Orders</button>
+<form action="/yourcart" method="get">
+<button class="btn info button4" "type="submit">Back to My-Cart</button>
  </form>
  </div>
  
@@ -82,27 +82,23 @@ if(session.getAttribute("username") == null)
 <div class="row">
 <div class="column">
 <hr>
-<form action="/homepage" method="get">
+<form action="/cardinfopage" method="get">
   <div class="center">
 
-    <h3><font color="black">Your-Order is being processed...</font></h3>
+    <h3><font color="black">Please confirm your purchase...</font></h3>
     
   </div>
   <tr>
   <div class="center">
-	<h3><font color="blue">Product : ${viewproduct.pname}</font></h3>
-	<h3><font color="blue">Price : ${order_price}</font></h3>
-	<h3><font color="blue">Quantity : ${order_quantity}</font></h3>
+	<h3><font color="blue">Product : ${cartproduct.pname}</font></h3>
+	<h3><font color="blue">Price : ${cart_price}</font></h3>
+	<h3><font color="blue">Quantity : ${cart_quantity}</font></h3>
 	
-	<img id="rcorners3" src="${viewproduct.pimage}" width="260" height="200"><br>
+	<img id="rcorners3" src="${cartproduct.pimage}" width="260" height="200"><br>
 	
-	<form action="/cancelorder" method="post">
+	<form action="/cardinfopage" method="post">
 <br></br>
-  <div class="center">
-
-    <li><a style="font-family:verdana;" href="/cancelorder?code=${viewproduct.pid}">Cancel Order!!!</a></li><br>
-    
-  </div>
+  <button class="btn success button4" "type="submit">Click to Confirm!</button>
   <br>
 </form>
   </div>
